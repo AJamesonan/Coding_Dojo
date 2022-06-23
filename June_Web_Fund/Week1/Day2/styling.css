@@ -1,0 +1,23 @@
+
+h1{
+    color: white ;
+    background-color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+
+span{
+    color: aqua;
+    text-decoration-style: ;
+}
+
+h2{
+    display: block;
+    color: white;
+    background-color: blueviolet;
+    text-align: center;
+}
+h3{
+    color: rgb(19, 11, 75);
+    text-align: end;
+    background-color:rgba(156, 197,246);
+}
