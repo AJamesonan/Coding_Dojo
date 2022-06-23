@@ -3,6 +3,7 @@ h1{
     color: white ;
     background-color: black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    margin: -0px;
 }
 
 span{
@@ -14,9 +15,11 @@ h2{
     color: white;
     background-color: blueviolet;
     text-align: center;
+    margin-top: 3px;
 }
 h3{
     color: rgb(19, 11, 75);
     text-align: end;
     background-color:rgba(156, 197,246);
+    margin-top: -15px;
 }
