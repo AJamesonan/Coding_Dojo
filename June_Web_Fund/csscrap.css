@@ -1,0 +1,29 @@
+.row1{
+    display: flex;
+}
+.col{
+    background-color: aqua;
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+}
+.row2{
+    display: flex;
+}
+.col-2{
+    background-color: blueviolet;
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+    flex: 2;
+}
+.row3{
+    display: flex;
+}
+.col-3{
+    background-color: aqua;
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+    flex: 3;
+}

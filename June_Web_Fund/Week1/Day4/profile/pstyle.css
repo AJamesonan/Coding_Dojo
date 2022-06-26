@@ -126,19 +126,41 @@
     border: 3px solid gray;
     border-top: 0px;
     position: relative;
-    padding: 3px;
-    display: flex;
-    align-items: center; 
+    padding: 2px;
+    display: flex; 
     justify-content:space-around;
+}
+.col1{
+    position: relative;
+    flex: 1;
+    margin:8px;
+}
+.col2{
+    flex: 2;
+    position: relative;
+}
+.col3{
+    flex: 2;
+    position: relative;
+    margin: 0px 0px 0px 10px;
+
 }
 .reqBoxContent img{
     height: 20px;
     position: relative;
-    top: 2px;
+    margin: 5px 0px 5px 0px;
 }
-.reqBoxContent #opt{
+.reqBoxContent p{
+    height: 20px;
     position: relative;
-    margin-left:20px;
+    top: 8px;
+    margin: 5px 0px 13px 0px;
+    left:-10px
+}
+#opt{
+    position: relative;
+    margin-left:2;
+    top: 10px;
 }
 /* /////EDUCATION BOX/////// */
 .educationBox{
@@ -176,7 +198,7 @@
 }
 /* /////YOUR CONNECTIONS BOX/////// */
 .connectionsBox{
-    height: 185px;
+    height: 170px;
     width: 170px;
     background-color: green;
     position:relative;
@@ -206,7 +228,7 @@
     position: relative;
 }
 .connectBoxCont{
-    height: 115px;
+    height: 100px;
     background-color: white;
     border: 3px solid gray;
     border-top: 0px;
