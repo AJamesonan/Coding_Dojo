@@ -32,6 +32,7 @@ function getAnswer() {
 function replace(){
     var ballimage = document.querySelector("#ball");
     ballimage.src = "ball.gif";
+    console.log(ballimage)
     setTimeout(replaceback, 2000);
 }
 function replaceback() {
