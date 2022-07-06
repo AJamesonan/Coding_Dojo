@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.header{
+    height: 60px;
+    /* display: flex; */
+    background-color: rgb(0, 153, 255);
+    /* justify-content: */
+}
+
+.navoptions{
+    height: 60px;
+    width: 600px;
+    background-color: rgb(0, 153, 255);
+    color:white;
+    position: relative;
+    left: 75px;
+    display: flex;
+    align-items: center;
+}
+.navoptions h2{
+    float: 3;
+    width: 280px;
+    margin-right: 80px;
+}
+.navoptions h4{
+    flex: 4;
+}
+/* //////////////// */
+.citytemp{
+    height: 50px;
+    width: 600px;
+    display: flex;
+    position: relative;
+    left: 75px;
+    align-items: center;
+    border-bottom: 2px solid;
+    margin-top: -5px;
+}
+.city{
+    flex: 5;
+}
+.tempopt{
+    flex: 3;
+    position: relative;
+    left: 50px;
+}
+/* /////////////////// */
+
+.mainbody{
+    display: flex;
+    width: 600px;
+    height: 240px;
+    margin-left: 75px;
+    justify-content: space-between;
+}
+.today{
+    background-color: lightgrey;
+    margin-right:5px;
+    width: 120px;
+    /* border: 2xp solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.tomorrow{
+    background-color: lightgrey;
+    /* margin-right:; */
+    width: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.friday{
+    background-color: lightgrey;
+    /* margin-right:; */
+    width: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.saturday{
+    background-color: lightgrey;
+    margin-left: 5px;
+    width: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+img{
+    border-radius: 50%;
+    height: 90px;
+
+}
+.cookies{
+    position: fixed;
+    display: flex;
+    background-color: grey;
+    width:600px ;
+    height: 100px;
+    top: 350px;
+    left: 75px; 
+}
+.cookies img{
+    margin-right: 15px;
+
+}
+.cookies h1{
+    flex: 4;
+}
+.cookies button{
+    height: 30px;
+    width:100px;
+    flex: 1;
+}

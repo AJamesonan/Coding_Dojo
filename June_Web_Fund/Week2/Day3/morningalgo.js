@@ -29,6 +29,17 @@ function flatten(arr2d){
     }
     return flat
 }
-var result = flatten(arr2d)
-console.log(result)
-console.log(flatten(arr2d))
+// var result = flatten(arr2d)
+// console.log(result)
+// console.log(flatten(arr2d))
+for(var num1 =0; num1<=3;num1++)
+    {
+    for(var num2 =0; num2<=2;num2++)
+    {
+       if(num1 == 5)
+       {
+       console.log('coder');
+        }
+    }
+    console.log('ninja');
+}
