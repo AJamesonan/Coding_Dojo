@@ -1,19 +1,28 @@
-import random
+class BankAccount:
+    #declaring class attribute, has to be outside init
+    all_accounts = []
 
-print('Welcome to Python!')
+    def __init__(self, int_rate, balance, accountname): 
+        self.int_rate = int_rate
+        self.balance = balance
+        self.accountname = accountname
+        #need to add to all_account list for class function
+        BankAccount.all_accounts.append(self)
 
-print('This is a loop printing 5 times')
-for x in range(1, 6):
-    print(f'x is: {x}')
+class User:
+    
+    user_accounts = []
 
-weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
-day = random.choice(weekdays)
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
 
-print(f'Today is: {day}')
+    def user_createAccount(self,int_rate, balance, accountname):
+        self.account = BankAccount(int_rate, balance, accountname) #pass in accountname when creating account, then append to list - can use to loop through accounts in classmethod below.
+        User.user_accounts.append(self) #getting error here - why? Same as BankAccount?
 
-if day == 'Monday':
-    print('It will be a long week!')
-elif(day == 'Friday'):
-    print('Woohoo, time for the weekend!')
-else:
-    print('Not quite there yet.')
+Bob = User('Bob',"gmail.com")
+
+Bob.user_createAccount(0.01,90,'capitol1')
+
+Bob.user_createAccount(0.01, 0, "Fishing").user_display_info()
