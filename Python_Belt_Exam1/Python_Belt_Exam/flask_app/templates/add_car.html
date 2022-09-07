@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Put Car Up For Sale</h1>
+    <a href="/cars">Dashboard</a> | <a href="/logout">Logout</a>
+    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    <form action="/add/car" method="POST">
+        <div>
+            Price: <select name="price">
+                {% for n in range(1000,10000,1000) %}
+                <option >{{n}}</option>
+                {% endfor %}
+            </select><br>
+            Model: <input type="text" name="model"><br>
+            Make: <input type="text" name ="make"><br>
+            Year: <select name="year">
+                {% for n in range(1950,2023) %}
+                <option >{{n}}</option>
+                {% endfor %}
+            </select><br>
+        
+        Description:<br>
+        <input type="textbox" name="description" style="height: 40px;"><br>
+        <input type="submit" value="Add">
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view</title>
+</head>
+<body>
+    <body>
+        <h1>Welcome, {{session['first_name']}} </h1>
+        <a href="/cars"> back to cars</a> | <a href="/logout"> logout</a>
+    
+        <div>
+            <h5>${{car.price}}</h5>
+    
+            Model: {{car.model}}<br>
+            
+            Make: {{car.make}} <br>
+            Year: {{car.year}} <br>
+    
+            Discription: {{car.description}}<br>
+    
+    
+            Seller: {{car.seller}} <br>
+    
+        </div>
+        <a href="/cars/delete/{{car.id}}"> Purchase</a>
+    
+</body>
+</html>

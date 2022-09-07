@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome to Car Dealz, {{session['first_name']}}</h1>  <a href="/car/new">+ Add A Car</a> <a href="/logout">Logout</a>
+        <table>
+            <tr>
+                <td>Model</td>
+                <td>Year</td>
+                <td>Seller</td>
+                <td>Actions</td>
+            </tr>
+            <tr>
+                {% for car in cars %}
+                <td>{{car.model}}</td>
+                <td>{{car.year}}</td>
+                <td>{{car.seller.first_name}}</td>
+                <td><a href="/car/{{car.id}}">view car</a> 
+                    {% if session['seller_id'] == car.seller.id %}
+                    | 
+                    <a href="/edit/car/{{car.id}}">edit</a> | 
+                    <a href="/cars/delete/{{car.id}}">delete</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    </body>
+    </html>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<meta name="viewport" content="initial-scale=1.0">
+<meta charset="utf-8">
+<title>Simple Map</title>
+<html>
+<head>
+    <link href="{{url_for('static', filename = 'style.css')}}" rel="stylesheet">
+
+
+</head>
+<body>
+    <div class="header"> <h1>Header Stuff</h1></div>
+    <div class="ratio">
+    <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen
+    src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJEfGkTumyQYgRefobYzWgPa8&destination=place_id:ChIJOQA1nLXHQYgRT8FMZYCrgo8&key=AIzaSyBA--rGJael1hwT0002X3KWPPENenM-OGs"></iframe>
+    </div>
+
+<div>#2 
+
+</div>
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+defer
+></script>
+<script src="{{url_for('static', filename = 'script.js')}}"></script>
+</body>
+</html>

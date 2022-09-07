@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit {{car.make}}</h1>
+    <a href="/cars">Dashboard</a> | 
+    <a href="/logout">Logout</a>
+        <form action="/update/car/{{car.id}}" method="POST">
+            <div>
+                Price: <select name="price">
+                    <option> {{car.price}}</option>
+                    {% for n in range(1000,10000,1000) %}
+                    <option >{{n}}</option>
+                    {% endfor %}
+                </select><br>
+                Model: <input type="text" name="model" value="{{car.model}}"><br>
+                Make: <input type="text" name ="make" value="{{car.make}}"><br>
+                Year: <select name="year">
+                    <option>{{car.year}}</option>
+                    {% for n in range(1950,2023) %}
+                    <option value="{{car.year}}">{{n}}</option>
+                    {% endfor %}
+                </select><br>
+            
+            Description:<br>
+            <input type="textbox" name="description" style="height: 40px;" value="{{car.description}}"><br>
+            <input type="submit" value="Add">
+        </div>
+    </form>
+    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+</body>
+</html>

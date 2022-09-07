@@ -1,0 +1,12 @@
+General Rules:
+  Get table structures
+  Note relationships
+  For query:
+     Select fields
+	count() (if applicable) "count adds records/ rows"
+	sum() (if applicable)   "sum adds fields values"
+         Distinct = identify a unique value/values
+     Identify tables (FROM)
+     Join (if applicable)
+     Group by (if applicable)
+     Order by
