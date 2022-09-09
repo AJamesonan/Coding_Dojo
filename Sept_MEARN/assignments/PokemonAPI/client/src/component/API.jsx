@@ -1,30 +1,32 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
+
+
 
 const API =() =>{
     const [pokemon, setpokemon] = useState([]);
+    let [buttonClicked, setButtonClicked] = useState(false)
+    
 
-    const fetchData=()=>{
+    useEffect(()=>{   
         console.log("Test TEST")
-        fetch('https://pokeapi.co/api/v2/pokemon/')
+        axios.get('https://pokeapi.co/api/v2/pokemon/')
         .then(response =>{
-            return response.json()
+            console.log(response.data.results)
+            setpokemon((response.data.results))
         })
-        .then((response)=>{
-            console.log(response)
-            setpokemon(response.results)
-            console.log(response.results)
-        })
-        .catch((err)=>{
-            console.log("catch all cought: ", err)
-        })
-    }
+    },[buttonClicked])
+        
     return(
         <div>
-            <button onClick={fetchData}> Get Pokemon</button>
-            {pokemon.map((item, idx)=>{
+            <button onClick={()=>{setButtonClicked(!buttonClicked)}}> Get Pokemon</button>
+            
+            {buttonClicked ?
+            pokemon.map((item, idx)=>{
                 return (<div key={idx}>{item.name}</div>)
-            })}
+            }):null
+            }
         </div>
     );
-};
+}
 export default API;
