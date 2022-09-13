@@ -1,0 +1,24 @@
+___________________________________________________________________________________________________
+Inside project
+____________________________________________________________________________________________________
+npm install react-bootstrap bootstrap
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import React from "react";
+
+npm install axios
+import axios from 'axios';
+npm install react-router-dom
+
+import {
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
+npm install
+
+
+const express = require("express");
+const app = express();
+const port = 8000;
