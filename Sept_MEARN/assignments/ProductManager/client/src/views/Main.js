@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Form from '../components/form';
-export default () => {
-    const [ message, setMessage ] = useState("Loading...");
+import ProjectList from '../components/projectsList';
+
+const Main = (props) => {
+    const [ projects, setProjects] = useState([]);
+    const [ loaded, setLoaded] = useState(false);
     useEffect(()=>{
-        axios.get("http://localhost:8000/api")
-            .then(res=>setMessage(res.data.message))       
-    }, []);
+        axios.get('http://localhost:8000/api/projects')
+            .then(res=>{
+                setProjects(res.data);
+                setLoaded(true);
+            })
+            .catch(err => console.error(err));
+    },[]);
     return (
         <div>
-            <h2>Message from the backend: {message}</h2>
             <Form/>
+            <hr/>
+            {loaded && <ProjectList projects={projects}/>}
         </div>
     )
 }
 
+export default Main;

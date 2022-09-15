@@ -1,12 +1,18 @@
 import React from 'react';
 import Main from './views/Main'
+import Details from './views/details';
 import './App.css';
 import Form from './components/form';
+import { Routes, Route, Link, Navigate } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <Main/>
+    <Routes>
+      <Route element={<Main/>} path= "/projects/" />
+      <Route element={<Main/>} path= "/" />
+      <Route element={<Details/>} path= "/projects/:id" />
+    </Routes>
     </div>
   );
 }
