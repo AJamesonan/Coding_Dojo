@@ -7,10 +7,11 @@ const Detail = (props) => {
     const { id } = useParams();
     
     useEffect(() => {
-        axios.get('http://localhost:8000/api/projects/' +id)
-            .then(res => setProject(res.data))
+        axios.get('http://localhost:8000/api/projects/6322b63e71fa6b98d1fd1637')
+            .then(res => setProject(res.data.projects))
             .catch(err => console.error(err));
     }, []);
+    console.log(project)
     
     return (
         <div>
