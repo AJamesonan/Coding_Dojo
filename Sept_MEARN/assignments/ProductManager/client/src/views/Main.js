@@ -14,11 +14,16 @@ const Main = (props) => {
             })
             .catch(err => console.error(err));
     },[]);
+
+    const removeFromDom = projectId => {
+        setProjects(projects.filter(project => project._id != projectId));
+    }
+
     return (
         <div>
             <Form/>
             <hr/>
-            {loaded && <ProjectList projects={projects}/>}
+            {loaded && <ProjectList projects={projects} removeFromDom={removeFromDom}/>}
         </div>
     )
 }

@@ -4,14 +4,15 @@ import Details from './views/details';
 import './App.css';
 import Form from './components/form';
 import { Routes, Route, Link, Navigate } from 'react-router-dom';
+import Update from './components/projects.update';
 
 function App() {
   return (
     <div className="App">
     <Routes>
-      <Route element={<Main/>} path= "/projects/" />
       <Route element={<Main/>} path= "/" />
       <Route element={<Details/>} path= "/projects/:id" />
+      <Route element={<Update/>} path= "/projects/update/:id" />
     </Routes>
     </div>
   );

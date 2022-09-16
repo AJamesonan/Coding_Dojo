@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 export default () => {
     //keep track of what is being typed via useState hook
     const [title, setTitle] = useState(""); 
@@ -15,7 +16,10 @@ export default () => {
             price,
             description
         })
-            .then(res=>console.log(res))
+            .then(res=>{
+                console.log(res)
+                
+            })
             .catch(err=>console.log(err))
     }
     //onChange to update title and price
@@ -33,7 +37,7 @@ export default () => {
                 <label>Description</label><br/>
                 <input type="text" onChange={(e)=>setDescription(e.target.value)} value={description}/>
             </p>
-            <input type="submit"/>
+            <input type="submit" value="new post"/>
         </form>
     )
 }

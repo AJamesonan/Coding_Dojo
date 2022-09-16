@@ -11,19 +11,19 @@ module.exports.index = (request, response) =>{
 }
 module.exports.findAllProjects = (req, res) => {
     Projects.find()
-        .then(allDaProjects => res.json({ projects: allDaProjects }))
+        .then(allDaProjects => res.json(allDaProjects))
         .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
 
 module.exports.findOneSingleProject = (req, res) => {
     Projects.findOne({ _id: req.params.id })
-        .then(oneSingleProject => res.json({ projects: oneSingleProject }))
+        .then(oneSingleProject => res.json(oneSingleProject))
         .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
 
 module.exports.createNewProject = (req, res) => {
     Projects.create(req.body)
-        .then(newlyCreatedProjects => res.json({projects: newlyCreatedProjects }))
+        .then(newlyCreatedProjects => res.json(newlyCreatedProjects))
         .catch(err => res.json({ message: 'Something went wrong on create', error: err }));
 }
 
@@ -33,12 +33,12 @@ module.exports.updateExistingProject = (req, res) => {
         req.body,
         { new: true, runValidators: true }
     )
-        .then(updatedProjects => res.json({ projects: updatedProjects }))
+        .then(updatedProjects => res.json(updatedProjects))
         .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
 
 module.exports.deleteAnExistingProject = (req, res) => {
     Projects.deleteOne({ _id: req.params.id })
-        .then(result => res.json({ result: result }))
+        .then(deleteConfirmation => res.json(deleteConfirmation))
         .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
