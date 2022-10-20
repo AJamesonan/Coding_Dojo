@@ -13,10 +13,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 
 @Entity
@@ -27,6 +30,8 @@ public class Place {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @NotEmpty(message="All fields must be provided.")
+    @Size(min=1, max=30)
     private String name; 
     
     @NotEmpty(message="All fields must be provided.")
@@ -41,12 +46,16 @@ public class Place {
     @Size(min=1)
     private String state;
     
-    @NotEmpty(message="All fields must be provided.")
-    private int zip;
+    //needs notNull or equivalent annotation
+    @Min(value = 1)
+    private Long zip;
     
     public float coordinates;
     
-    @Column(updatable =false)
+    private String place_id;
+    
+
+	@Column(updatable =false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createdAt;
   
@@ -54,6 +63,7 @@ public class Place {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
 	
+	@JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id")
     
@@ -81,6 +91,13 @@ public class Place {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public String getPlaceID() {
+		return place_id;
+	}
+	
+	public void setPlaceID(String place_id) {
+		this.place_id = place_id;
 	}
 
 	public String getName() {
@@ -115,11 +132,11 @@ public class Place {
 		this.state = state;
 	}
 
-	public int getZip() {
+	public Long getZip() {
 		return zip;
 	}
 
-	public void setZip(int zip) {
+	public void setZip(Long zip) {
 		this.zip = zip;
 	}
 

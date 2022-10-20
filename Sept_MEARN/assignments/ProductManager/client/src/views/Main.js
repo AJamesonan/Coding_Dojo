@@ -15,13 +15,20 @@ const Main = (props) => {
             .catch(err => console.error(err));
     },[]);
 
-    const removeFromDom = projectId => {
+    const removeFromDom = (projectId) => {
         setProjects(projects.filter(project => project._id != projectId));
+    }
+
+    const createNewProject = project =>{
+        axios.post('http://localhost:8000/api/projects', project)
+        .then(res=>{
+            setProjects([...projects,res.data]);
+        })
     }
 
     return (
         <div>
-            <Form/>
+            <Form onSubmitProp={createNewProject} initalTitle="" initialPrice="" initialDescription=""/>
             <hr/>
             {loaded && <ProjectList projects={projects} removeFromDom={removeFromDom}/>}
         </div>

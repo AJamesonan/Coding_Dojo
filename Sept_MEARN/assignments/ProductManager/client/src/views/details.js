@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { Navigate, useParams } from "react-router-dom";
+import { useNavigate , useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+
 
 const Detail = (props) => {
     const [project, setProject] = useState({})

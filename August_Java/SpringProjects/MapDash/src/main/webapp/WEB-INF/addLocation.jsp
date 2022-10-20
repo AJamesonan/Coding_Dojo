@@ -22,16 +22,22 @@
 <h1>Set Yo' Spot</h1>
 		<a href="/dash">Back </a>
 	<form:form action="/process/new/location" method="POST" modelAttribute="place">
+	
 	<form:label path = "name">Name: </form:label>
-	<form:input type="text" path="name"/><br>
+	<form:input type="text" path="name"/><form:errors path="name"/><br>
+	
 	<form:label path = "street_address">Street Address: </form:label>
-	<form:input type="text" path="street_address"/><br>
+	<form:input type="text" path="street_address"/><form:errors path="street_address"/><br>
+	
 	<form:label path = "city">City: </form:label>
-	<form:input type="text" path="city"/>
+	<form:input type="text" path="city"/><form:errors path="city"/>
+	
 	<form:label path = "state">State: </form:label>
-	<form:input type="text" path="state"/>
+	<form:input type="text" path="state"/><form:errors path="state"/>
+	
 	<form:label path="zip">Zip Code:</form:label>
-	<form:input type="number" path="zip"></form:input><br>
+	<form:input type="number" path="zip"/><form:errors path="zip"/><br>
+	
 	<form:input type="hidden" path="user" value="${userId}"/>
 	<input type="submit" value="Submit">
 	</form:form>

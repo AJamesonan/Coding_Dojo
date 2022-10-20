@@ -4,7 +4,7 @@ import Details from './views/details';
 import './App.css';
 import Form from './components/form';
 import { Routes, Route, Link, Navigate } from 'react-router-dom';
-import Update from './components/projects.update';
+import Update from './views/update';
 
 function App() {
   return (

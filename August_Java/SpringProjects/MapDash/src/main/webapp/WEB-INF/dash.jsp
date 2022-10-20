@@ -33,38 +33,42 @@
                             <th>Destination</th>
                             <th>Travel time</th>
                         </tr>
-                      <c:forEach var="origin" items="${places.origins}">
+                      <c:forEach var="destination" items="${travelTimes}">
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td>${destination.key}</td>
+                            <td>${destination.value}</td>
+                          
                         </tr>
                        </c:forEach>
                     </table>
                 </div>
                 <div class="ratio">
-                    <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen
-                    src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJEfGkTumyQYgRefobYzWgPa8&destination=place_id:ChIJOQA1nLXHQYgRT8FMZYCrgo8&key=AIzaSyBA--rGJael1hwT0002X3KWPPENenM-OGs"></iframe>
-                    <!-- src="https://www.google.com/maps/embed/v1/directions?origin=${origin}&destination=${destination}&key=AIzaSyBA--rGJael1hwT0002X3KWPPENenM-OGs"></iframe> -->
+                   <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen 
+                    src="https://www.google.com/maps/embed/v1/directions?origin=place_id:${origin}&destination=place_id:${destination}&key=API_KEY"></iframe>
+                    </div>
+                     <div class="ratio">
+                    <iframe src="https://calendar.google.com/calendar/embed?src=ajamesonan%40gmail.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                	</div>
                 </div>
             </div>
             <div class="locationInput">
-                <form action="">
+                <form action="/set/routemap" method="POST" modelAttribute="locationInput">
                     <label>From:</label>
                     <select name="origin">
-                       <!--   <c:forEach var="origin" items="${places.origins}">-->
-                        <option>${origin}</option>
-                        <!--   </c:forEach>-->
+                       <c:forEach var="origin" items="${places}">
+                        <option>${origin.name}</option>
+                        </c:forEach>
                     </select><br>
                     <label>Destination:</label>
                     <select name="destination">
-                        <!--   <c:forEach var="destination" items="${places.destinations}">-->
-                        <option>${destination}</option>
-                        <!--   </c:forEach>-->
+                           <c:forEach var="destination" items="${places}">
+                        <option>${destination.name}</option>
+                           </c:forEach>
                     </select><br>
                     <input type="submit" value="create">
                 </form>
-            </div>
             <div class="add"><a href="/add/location"> Add your locations</a></div>
+            </div>
         </div>
         <div class="spacer"></div>
     </div>

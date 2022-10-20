@@ -38,13 +38,18 @@ body{
     display: flex;
     display: flex;
     height: 500px;
-    width:40% ;
+    width:800px;
 
+}
+
+iframe{
+	position:absolute;
 }
 
 .wrap{
     display: flex;
     justify-content: space-between;
+    width: 80%;
     padding: 50px;
 }
 .table{
@@ -59,8 +64,10 @@ body{
 
 .locationInput{
     display: flex;
+    position: absolute;
     background-color: lightblue;
     width: 300px;
+    top:900px;
     justify-content: end;
     margin-left: 50px;
 }
